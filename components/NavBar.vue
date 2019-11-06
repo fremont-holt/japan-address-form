@@ -3,7 +3,7 @@
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <img
-          src="~/assets/ce_new_logo-1.png"
+          src="~/assets/img/ce_new_logo-1.png"
           alt="Credit Engine Logo"
           width="112"
           height="28"

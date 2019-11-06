@@ -1,30 +1,23 @@
 <template>
-  <form @submit.prevent="">
+  <form @submit.prevent="handleSubmit">
     <div class="field">
       <label class="label" for="start-zip">Zip Code</label>
-      <div class="field-body is-horizontal">
-        <input
-          id="start-zip"
-          type="text"
-          class="input start-zip"
-          placeholder="xxx"
-          maxlength="3"
-          required
-        />
-        <input
-          id="end-zip"
-          type="text"
-          class="input end-zip"
-          placeholder="xxxx"
-          maxlength="4"
-          required
-        />
-      </div>
+      <input
+        id="zip"
+        v-model="zip"
+        type="text"
+        class="input zip"
+        placeholder="xxxxxxx"
+        maxlength="7"
+        required
+        @blur="lookUpZip"
+      />
     </div>
     <div class="field">
       <label class="label" for="region">Region</label>
       <input
         id="region"
+        v-model="region"
         type="text"
         placeholder="Region"
         class="input"
@@ -35,6 +28,7 @@
       <label class="label" for="locality">Locality</label>
       <input
         id="locality"
+        v-model="locality"
         type="text"
         placeholder="Locality"
         class="input"
@@ -45,6 +39,7 @@
       <label class="label" for="street-address">Street Address</label>
       <input
         id="street-address"
+        v-model="streetAddress"
         type="text"
         placeholder="Street Address"
         class="input"
@@ -55,10 +50,10 @@
       <label class="label" for="extended-address">Extended Address</label>
       <input
         id="extended-address"
+        v-model="extendedAddress"
         type="text"
         placeholder="Extended Address"
         class="input"
-        required
       />
     </div>
     <div class="field is-grouped">
@@ -74,6 +69,42 @@
     </div>
   </form>
 </template>
+
+<script>
+import findByZip from '@/components/js/findByZip'
+
+export default {
+  data() {
+    return {
+      zip: '',
+      region: '',
+      locality: '',
+      streetAddress: '',
+      extendedAddress: ''
+    }
+  },
+  methods: {
+    async lookUpZip() {
+      const details = await findByZip(this.zip)
+      if (details) {
+        this.region = details.region
+        this.locality = details.locality
+        this.streetAddress = details.streetAddress
+        this.extendedAddress = details.extendedAddress
+      }
+    },
+    handleSubmit() {
+      console.log({
+        zip: this.zip,
+        region: this.region,
+        locality: this.locality,
+        streetAddress: this.streetAddress,
+        extendedAddress: this.extendedAddress
+      })
+    }
+  }
+}
+</script>
 
 <style>
 form {
