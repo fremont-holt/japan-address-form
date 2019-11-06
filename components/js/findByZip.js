@@ -48,22 +48,28 @@ async function findByZip(zip) {
     zips = await import('./zips/zips37.js')
   } else if (zipRange < 4200000) {
     zips = await import('./zips/zips40.js')
-  } else if (zipRange < 4500000) {
+  } else if (zipRange < 4300000) {
     zips = await import('./zips/zips42.js')
+  } else if (zipRange < 4500000) {
+    zips = await import('./zips/zips43.js')
   } else if (zipRange < 4700000) {
     zips = await import('./zips/zips45.js')
   } else if (zipRange < 5000000) {
     zips = await import('./zips/zips47.js')
-  } else if (zipRange < 5200000) {
+  } else if (zipRange < 5100000) {
     zips = await import('./zips/zips50.js')
+  } else if (zipRange < 5200000) {
+    zips = await import('./zips/zips51.js')
   } else if (zipRange < 5500000) {
     zips = await import('./zips/zips52.js')
   } else if (zipRange < 5700000) {
     zips = await import('./zips/zips55.js')
   } else if (zipRange < 6000000) {
     zips = await import('./zips/zips57.js')
-  } else if (zipRange < 6200000) {
+  } else if (zipRange < 6100000) {
     zips = await import('./zips/zips60.js')
+  } else if (zipRange < 6200000) {
+    zips = await import('./zips/zips61.js')
   } else if (zipRange < 6500000) {
     zips = await import('./zips/zips62.js')
   } else if (zipRange < 6700000) {
@@ -88,12 +94,22 @@ async function findByZip(zip) {
     zips = await import('./zips/zips87.js')
   } else if (zipRange < 9200000) {
     zips = await import('./zips/zips90.js')
-  } else if (zipRange < 9500000) {
+  } else if (zipRange < 9300000) {
     zips = await import('./zips/zips92.js')
-  } else if (zipRange < 9700000) {
+  } else if (zipRange < 9400000) {
+    zips = await import('./zips/zips93.js')
+  } else if (zipRange < 9500000) {
+    zips = await import('./zips/zips94.js')
+  } else if (zipRange < 9600000) {
     zips = await import('./zips/zips95.js')
-  } else if (zipRange < 10000000) {
+  } else if (zipRange < 9700000) {
+    zips = await import('./zips/zips96.js')
+  } else if (zipRange < 9800000) {
     zips = await import('./zips/zips97.js')
+  } else if (zipRange < 9900000) {
+    zips = await import('./zips/zips98.js')
+  } else if (zipRange < 10000000) {
+    zips = await import('./zips/zips99.js')
   } else {
     console.error('invalid zip')
   }
