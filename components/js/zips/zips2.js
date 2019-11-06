@@ -1,4 +1,10 @@
 export const zips = {
+  '0200000': {
+    region: '岩手県',
+    locality: '盛岡市',
+    streetAddress: '',
+    extendedAddress: ''
+  },
   '0200001': {
     region: '岩手県',
     locality: '盛岡市',
@@ -12600,12 +12606,6 @@ export const zips = {
     region: '岩手県',
     locality: '和賀郡西和賀町',
     streetAddress: '沢内貝沢',
-    extendedAddress: ''
-  },
-  '0300111': {
-    region: '青森県',
-    locality: '青森市',
-    streetAddress: '荒川',
     extendedAddress: ''
   }
 }

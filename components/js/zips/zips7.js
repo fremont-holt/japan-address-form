@@ -1,4 +1,10 @@
 export const zips = {
+  '0700000': {
+    region: '北海道',
+    locality: '旭川市',
+    streetAddress: '',
+    extendedAddress: ''
+  },
   '0700001': {
     region: '北海道',
     locality: '旭川市',
@@ -10055,11 +10061,5 @@ export const zips = {
     locality: '旭川市',
     streetAddress: '永山二条',
     extendedAddress: '１３丁目１番２８号（永山郵便局私書箱第６号）'
-  },
-  '0800000': {
-    region: '北海道',
-    locality: '帯広市',
-    streetAddress: '',
-    extendedAddress: ''
   }
 }

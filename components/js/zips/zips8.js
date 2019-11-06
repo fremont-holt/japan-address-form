@@ -1,4 +1,10 @@
 export const zips = {
+  '0800000': {
+    region: '北海道',
+    locality: '帯広市',
+    streetAddress: '',
+    extendedAddress: ''
+  },
   '0800010': {
     region: '北海道',
     locality: '帯広市',
@@ -11770,12 +11776,6 @@ export const zips = {
     region: '北海道',
     locality: '十勝郡浦幌町',
     streetAddress: 'チプネオコッペ',
-    extendedAddress: ''
-  },
-  '0900000': {
-    region: '北海道',
-    locality: '北見市',
-    streetAddress: '',
     extendedAddress: ''
   }
 }

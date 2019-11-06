@@ -1,4 +1,10 @@
 export const zips = {
+  '0900000': {
+    region: '北海道',
+    locality: '北見市',
+    streetAddress: '',
+    extendedAddress: ''
+  },
   '0900001': {
     region: '北海道',
     locality: '北見市',
@@ -8565,12 +8571,6 @@ export const zips = {
     region: '北海道',
     locality: '紋別郡湧別町',
     streetAddress: '上湧別屯田市街地３１８番地（上湧別郵便局私書箱第１号）',
-    extendedAddress: ''
-  },
-  '1000000': {
-    region: '東京都',
-    locality: '千代田区',
-    streetAddress: '',
     extendedAddress: ''
   }
 }

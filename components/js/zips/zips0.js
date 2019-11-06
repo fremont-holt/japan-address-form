@@ -3670,11 +3670,5 @@ export const zips = {
     locality: '札幌市東区',
     streetAddress: '東苗穂二条',
     extendedAddress: '３丁目２－５'
-  },
-  '0100000': {
-    region: '秋田県',
-    locality: '秋田市',
-    streetAddress: '',
-    extendedAddress: ''
   }
 }

@@ -1,4 +1,10 @@
 export const zips = {
+  '0100000': {
+    region: '秋田県',
+    locality: '秋田市',
+    streetAddress: '',
+    extendedAddress: ''
+  },
   '0100001': {
     region: '秋田県',
     locality: '秋田市',
@@ -13779,12 +13785,6 @@ export const zips = {
     region: '秋田県',
     locality: '秋田市',
     streetAddress: '河辺三内',
-    extendedAddress: ''
-  },
-  '0200000': {
-    region: '岩手県',
-    locality: '盛岡市',
-    streetAddress: '',
     extendedAddress: ''
   }
 }

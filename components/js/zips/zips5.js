@@ -1,4 +1,10 @@
 export const zips = {
+  '0500000': {
+    region: '北海道',
+    locality: '室蘭市',
+    streetAddress: '',
+    extendedAddress: ''
+  },
   '0500051': {
     region: '北海道',
     locality: '室蘭市',
@@ -3971,11 +3977,5 @@ export const zips = {
     locality: '登別市',
     streetAddress: '中央町',
     extendedAddress: '６丁目１１番地'
-  },
-  '0600000': {
-    region: '北海道',
-    locality: '札幌市中央区',
-    streetAddress: '',
-    extendedAddress: ''
   }
 }
