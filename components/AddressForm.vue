@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit">
+  <form @submit.prevent="submit">
     <div class="field">
       <label class="label" for="start-zip">Zip Code</label>
       <input
@@ -60,9 +60,7 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <button class="button is-primary">
-              Submit
-            </button>
+            <input type="submit" value="Submit" class="button is-primary" />
           </div>
         </div>
       </div>
@@ -93,7 +91,7 @@ export default {
         this.extendedAddress = details.extendedAddress
       }
     },
-    handleSubmit() {
+    submit(e) {
       console.log({
         zip: this.zip,
         region: this.region,
@@ -109,14 +107,6 @@ export default {
 <style>
 form {
   margin: 20px;
-}
-.start-zip {
-  max-width: 100px;
-  margin-right: 25px;
-}
-
-.end-zip {
-  max-width: 150px;
 }
 
 .label {
