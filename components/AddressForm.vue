@@ -1,8 +1,11 @@
 <template>
   <div>
     <form v-if="!formSubmitted" @submit.prevent="submit">
+      <h1>{{ translation.heading[language] }}</h1>
       <div class="field">
-        <label class="label" for="start-zip">Zip Code</label>
+        <label class="label" for="start-zip">{{
+          translation.zip[language]
+        }}</label>
         <input
           id="zip"
           v-model="zip"
@@ -15,36 +18,42 @@
         />
       </div>
       <div class="field">
-        <label class="label" for="region">Region</label>
+        <label class="label" for="region">{{
+          translation.region[language]
+        }}</label>
         <input
           id="region"
           v-model="region"
           type="text"
-          placeholder="Region"
+          :placeholder="translation.region[language]"
           class="input"
           :class="{ 'is-danger': !regionValid, wobble: !regionValid }"
           @blur="blurRegion"
         />
       </div>
       <div class="field">
-        <label class="label" for="locality">Locality</label>
+        <label class="label" for="locality">{{
+          translation.locality[language]
+        }}</label>
         <input
           id="locality"
           v-model="locality"
           type="text"
-          placeholder="Locality"
+          :placeholder="translation.locality[language]"
           class="input"
           :class="{ 'is-danger': !localityValid, wobble: !localityValid }"
           @blur="blurLocality"
         />
       </div>
       <div class="field">
-        <label class="label" for="street-address">Street Address</label>
+        <label class="label" for="street-address">{{
+          translation.streetAddress[language]
+        }}</label>
         <input
           id="street-address"
           v-model="streetAddress"
           type="text"
-          placeholder="Street Address"
+          :placeholder="translation.streetAddress[language]"
           class="input"
           :class="{
             'is-danger': !streetAddressValid,
@@ -54,12 +63,14 @@
         />
       </div>
       <div class="field">
-        <label class="label" for="extended-address">Extended Address</label>
+        <label class="label" for="extended-address">{{
+          translation.extendedAddress[language]
+        }}</label>
         <input
           id="extended-address"
           v-model="extendedAddress"
           type="text"
-          placeholder="Extended Address"
+          :placeholder="translation.extendedAddress[language]"
           class="input"
         />
       </div>
@@ -67,13 +78,17 @@
         <div class="field-body">
           <div class="field">
             <div class="control">
-              <input type="submit" value="Submit" class="button is-primary" />
+              <input
+                type="submit"
+                :value="translation.submit[language]"
+                class="button is-primary"
+              />
             </div>
           </div>
         </div>
       </div>
     </form>
-    <h1 v-else>Thank you!</h1>
+    <h1 v-else>{{ translation.thankYou[language] }}</h1>
   </div>
 </template>
 
@@ -82,6 +97,7 @@ import axios from 'axios'
 import findByZip from '@/components/js/findByZip'
 
 export default {
+  props: ['language'],
   data() {
     return {
       zip: '',
@@ -93,11 +109,28 @@ export default {
       zipValid: true,
       regionValid: true,
       localityValid: true,
-      streetAddressValid: true
+      streetAddressValid: true,
+      translation: {
+        zip: { English: 'Zip Code', Japanese: '郵便番号' },
+        region: { English: 'Region', Japanese: '都道府県' },
+        locality: { English: 'Locality', Japanese: '郡市区(島)' },
+        streetAddress: { English: 'Street Address', Japanese: '番地' },
+        extendedAddress: {
+          English: 'Extended Address',
+          Japanese: 'それ以降の住所'
+        },
+        submit: { English: 'Submit', Japanese: 'それ以降の住所' },
+        heading: {
+          English: 'Please Enter Your Address',
+          Japanese: '新しい住所を追加'
+        },
+        thankYou: { English: 'Thank You!', Japanese: 'ありがとうございました' }
+      }
     }
   },
   methods: {
     async lookUpZip() {
+      this.zip = this.zip.replace(/[^0-9]/g, '')
       const details = await findByZip(this.zip)
       if (details) {
         this.region = details.region
@@ -178,6 +211,11 @@ form {
 .button {
   width: 100%;
   font-size: 2em;
+  margin-top: 0.75em;
+}
+
+.button.is-primary {
+  background-color: #44d5d2;
 }
 
 .input.is-danger {

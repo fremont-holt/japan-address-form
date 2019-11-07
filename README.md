@@ -12,6 +12,10 @@
 
 > Entering a zip code and leaving the field will autofill the other fields with the proper information. In order to make this available offline I ported the address info into js objects inside the project. This was done because the js object lookups are constant time so it doesn't matter how many there are when we look them up. There was an issue with the object being too large so I split it up between multiple files and dynamically load the one I need based on the zip that has been entered. I would like to split this out when I have time into a npm module that can be used wherever.
 
+### Passed Prop
+
+> The language radio button is hooked to a property that lets the form know what language it should be in. I realize that this is not a scalable way to do the translation of a website but purely did it to satisfy the passing a prop portion of the requirement.
+
 ### Backend
 
 > https://github.com/fremont-holt/japan-address-form-backend

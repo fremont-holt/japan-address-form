@@ -1,8 +1,27 @@
 <template>
   <div class="container">
     <div class="box address-form">
-      <h1>Please enter your address</h1>
-      <addressForm />
+      <div class="control">
+        <label class="radio">
+          <input
+            v-model="language"
+            type="radio"
+            value="English"
+            name="selectedLanguage"
+          />
+          English
+        </label>
+        <label class="radio">
+          <input
+            v-model="language"
+            type="radio"
+            value="Japanese"
+            name="selectedLanguage"
+          />
+          日本語
+        </label>
+      </div>
+      <addressForm :language="language" />
     </div>
   </div>
 </template>
@@ -11,6 +30,11 @@
 import AddressForm from '~/components/AddressForm'
 
 export default {
+  data() {
+    return {
+      language: 'English'
+    }
+  },
   components: {
     AddressForm
   }
@@ -30,5 +54,9 @@ h1 {
   font-size: 2em;
   font-weight: 300;
   text-align: center;
+}
+
+.radio:hover {
+  color: #44d5d2;
 }
 </style>
