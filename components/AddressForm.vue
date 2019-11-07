@@ -78,6 +78,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import findByZip from '@/components/js/findByZip'
 
 export default {
@@ -143,13 +144,23 @@ export default {
         this.streetAddressValid = false
       }
 
-      console.log({
-        zip: this.zip,
-        region: this.region,
-        locality: this.locality,
-        streetAddress: this.streetAddress,
-        extendedAddress: this.extendedAddress
-      })
+      if (
+        this.zipValid &&
+        this.regionValid &&
+        this.localityValid &&
+        this.streetAddressValid
+      ) {
+        axios
+          .post('http://127.0.0.1:8000/address/', {
+            zip: this.zip,
+            locality: this.locality,
+            streetAddress: this.streetAddress,
+            extendedAddress: this.extendedAddress
+          })
+          .then(() => {
+            this.formSubmitted = true
+          })
+      }
     }
   }
 }
