@@ -6,7 +6,7 @@
 
 ### Layout
 
-> I went with a color scheme based on Credit Engines. Color and movement is used to let the user know when a form field invalid.
+> I went with a color scheme based on Credit Engines. Color and movement is used to let the user know when a form field invalid. Bulma was used to bootstrap some base styles and quickly get up and running.
 
 ### Autofill
 
