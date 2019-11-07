@@ -114,7 +114,13 @@ async function findByZip(zip) {
     console.error('invalid zip')
   }
 
-  return zips.zips[zip]
+  let zipDetails = ''
+
+  if (zips.zips) {
+    zipDetails = zips.zips[zip]
+  }
+
+  return zipDetails
 }
 
 export default findByZip
